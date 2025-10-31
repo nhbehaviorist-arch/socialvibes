@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Colors - Purple/Pink Psychology Theme */
+    --background: 0 0% 98%;
+    --foreground: 270 50% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 270 50% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 50% 10%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 100% 98%;
+    --secondary-foreground: 262 90% 40%;
+    --muted: 270 30% 96%;
+    --muted-foreground: 270 20% 50%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 262 83% 58%;
+
+    /* Charts */
+    --chart-1: 142.0859 70.5628% 45.2941%;
+    --chart-2: 160.1183 84.0796% 39.4118%;
+    --chart-3: 161.3793 93.5484% 30.3922%;
+    --chart-4: 162.931 93.5484% 24.3137%;
+    --chart-5: 163.1461 88.1188% 19.8039%;
+
+    /* Sidebar */
+    --sidebar: 204 93.75% 93.7255%;
+    --sidebar-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-primary: 142.0859 70.5628% 45.2941%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 149.2683 80.3922% 90%;
+    --sidebar-accent-foreground: 216.9231 19.1176% 26.6667%;
+    --sidebar-border: 220 13.0435% 90.9804%;
+    --sidebar-ring: 142.0859 70.5628% 45.2941%;
+
+    /* Fonts */
+    --font-sans: Inter, sans-serif;
+    --font-display: Space Grotesk, sans-serif;
+
+    /* Shadows */
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+
+    /* Misc */
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 270 50% 8%;
+    --foreground: 0 0% 95%;
+    --card: 270 40% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 270 40% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 262 83% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 270 50% 16%;
+    --secondary-foreground: 270 30% 80%;
+    --muted: 270 40% 16%;
+    --muted-foreground: 270 20% 60%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 30% 20%;
+    --input: 270 30% 20%;
+    --ring: 262 83% 58%;
+
+    --chart-1: 158.1132 64.3725% 51.5686%;
+    --chart-2: 172.4551 66.0079% 50.3922%;
+    --chart-3: 142.0859 70.5628% 45.2941%;
+    --chart-4: 160.1183 84.0796% 39.4118%;
+    --chart-5: 161.3793 93.5484% 30.3922%;
+
+    --sidebar: 217.2414 32.5843% 17.451%;
+    --sidebar-foreground: 216 12.1951% 83.9216%;
+    --sidebar-primary: 158.1132 64.3725% 51.5686%;
+    --sidebar-primary-foreground: 222.2222 47.3684% 11.1765%;
+    --sidebar-accent: 216.9231 19.1176% 26.6667%;
+    --sidebar-accent-foreground: 240 5.0279% 64.902%;
+    --sidebar-border: 215 13.7931% 34.1176%;
+    --sidebar-ring: 158.1132 64.3725% 51.5686%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display), var(--font-sans);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Emoji animations for high vibe scores (7.5+) */
+.animate-emoji-pop-1 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 1 !important;
+}
+
+.animate-emoji-pop-2 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards;
+  opacity: 1 !important;
+}
+
+.animate-emoji-pop-3 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards;
+  opacity: 1 !important;
+}
+
+@keyframes emojiPop {
+  0% {
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Emoji animations for medium vibe scores (5-7.5) */
+.animate-emoji-float-1 {
+  animation: emojiFloat 2s ease-in-out infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-float-2 {
+  animation: emojiFloat 2s ease-in-out 0.4s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-float-3 {
+  animation: emojiFloat 2s ease-in-out 0.8s infinite;
+  opacity: 1 !important;
+}
+
+@keyframes emojiFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Emoji animations for low vibe scores (< 5) */
+.animate-emoji-slow-1 {
+  animation: emojiSlow 3s ease-in-out infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-slow-2 {
+  animation: emojiSlow 3s ease-in-out 0.6s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-slow-3 {
+  animation: emojiSlow 3s ease-in-out 1.2s infinite;
+  opacity: 1 !important;
+}
+
+@keyframes emojiSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Pulse animations for emoji pop sequences (high vibe) */
+.animate-emoji-pop-pulse-1 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, emojiPulse 0.8s ease-in-out 0.7s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-pop-pulse-2 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s forwards, emojiPulse 0.8s ease-in-out 0.8s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-pop-pulse-3 {
+  animation: emojiPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s forwards, emojiPulse 0.8s ease-in-out 0.9s infinite;
+  opacity: 1 !important;
+}
+
+@keyframes emojiPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+/* Pulse animations for emoji float sequences (medium vibe) */
+.animate-emoji-float-pulse-1 {
+  animation: emojiFloat 2s ease-in-out infinite, emojiPulse 0.8s ease-in-out infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-float-pulse-2 {
+  animation: emojiFloat 2s ease-in-out 0.4s infinite, emojiPulse 0.8s ease-in-out 0.3s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-float-pulse-3 {
+  animation: emojiFloat 2s ease-in-out 0.8s infinite, emojiPulse 0.8s ease-in-out 0.6s infinite;
+  opacity: 1 !important;
+}
+
+/* Pulse animations for emoji slow sequences (low vibe) */
+.animate-emoji-slow-pulse-1 {
+  animation: emojiSlow 3s ease-in-out infinite, emojiPulse 1s ease-in-out infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-slow-pulse-2 {
+  animation: emojiSlow 3s ease-in-out 0.6s infinite, emojiPulse 1s ease-in-out 0.4s infinite;
+  opacity: 1 !important;
+}
+
+.animate-emoji-slow-pulse-3 {
+  animation: emojiSlow 3s ease-in-out 1.2s infinite, emojiPulse 1s ease-in-out 0.8s infinite;
+  opacity: 1 !important;
+}
